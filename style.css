@@ -1,0 +1,443 @@
+/* --- NEW STYLES FOR READ MORE FUNCTIONALITY --- */
+.post-full-text {
+    display: none; /* Hidden by default */
+    margin-top: 15px; /* Add some space above the full text */
+    color: #444; /* Slightly different color for full text if desired */
+}
+
+/* When the parent wrapper has the 'expanded' class, show the full text */
+.post-content-wrapper.expanded .post-full-text {
+    display: block;
+}
+
+/* When expanded, hide the excerpt */
+.post-content-wrapper.expanded .post-excerpt {
+    display: none;
+}
+
+/* Adjust the .read-more button to .read-more-btn */
+.read-more-btn {
+    display: inline-block;
+    background: #77aaff;
+    color: #fff;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    cursor: pointer; /* Indicate it's clickable */
+    border: none; /* Remove default button border if it was a button */
+}
+
+.read-more-btn:hover {
+    background: #5588cc;
+}
+/* --- END NEW STYLES --- */
+
+
+/* Keep all your existing CSS below this */
+
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    border-bottom: 3px solid #77aaff;
+}
+
+header h1 {
+    float: left;
+    margin: 0;
+}
+
+header h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header li {
+    display: inline;
+    padding: 0 15px;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #77aaff;
+}
+
+/* Main Content Area (for index.html) */
+main {
+    padding: 20px 0;
+    display: flex; /* For sidebar layout */
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    gap: 20px; /* Space between main content and sidebar */
+}
+
+/* Styles for full-width content on other pages */
+.page-content {
+    display: block; /* Override flex for main content on other pages */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.content-block {
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%; /* Full width for content on these pages */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+#blog-posts {
+    flex: 3; /* Takes up more space on index.html */
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#sidebar {
+    flex: 1; /* Takes up less space on index.html */
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Blog Post Styles (index.html) */
+.blog-post {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.blog-post:last-child {
+    border-bottom: none;
+}
+
+.blog-post h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.blog-post h3 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.blog-post h3 a:hover {
+    color: #77aaff;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.blog-post img, .about-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+
+/* Sidebar Styles (index.html) */
+#sidebar h3 {
+    color: #333;
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#sidebar li {
+    margin-bottom: 8px;
+}
+
+#sidebar a {
+    text-decoration: none;
+    color: #555;
+}
+
+#sidebar a:hover {
+    color: #77aaff;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 20px;
+}
+
+/* Form Styles (for contact.html) */
+#contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+    font-size: 1em;
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+    border-color: #77aaff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(119, 170, 255, 0.5);
+}
+
+#contact-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+.btn {
+    display: inline-block;
+    background: #77aaff;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #5588cc;
+}
+
+.contact-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info i {
+    margin-right: 8px;
+    color: #77aaff;
+}
+
+/* Category List Styles (for categories.html) */
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.category-item {
+    background: #fdfdfd;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.category-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.category-item h3 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.category-item h3 a:hover {
+    color: #77aaff;
+}
+
+.category-item p {
+    font-size: 0.95em;
+    color: #666;
+}
+
+.category-count {
+    font-size: 0.85em;
+    color: #999;
+    font-style: italic;
+    margin-top: 15px;
+    text-align: right;
+}
+
+/* Author List Styles (for authors.html) */
+.author-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.author-profile {
+    background: #fdfdfd;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.author-profile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.author-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px auto;
+    border: 3px solid #77aaff;
+}
+
+.author-profile h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.author-profile h3 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.author-profile h3 a:hover {
+    color: #77aaff;
+}
+
+.author-bio {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.author-social a {
+    color: #77aaff;
+    font-size: 1.5em;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+.author-social a:hover {
+    color: #5588cc;
+}
+
+.author-stats {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 15px;
+    border-top: 1px dashed #eee;
+    padding-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1,
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    header li {
+        display: block;
+        padding: 5px 0;
+    }
+
+    main {
+        flex-direction: column; /* Stack columns vertically on index.html */
+    }
+
+    #blog-posts,
+    #sidebar {
+        flex: auto; /* Take full width */
+        width: 100%;
+        margin-bottom: 20px; /* Add spacing when stacked */
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .content-block {
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    .category-list,
+    .author-list {
+        grid-template-columns: 1fr; /* Stack categories/authors vertically */
+    }
+}

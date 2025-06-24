@@ -1,0 +1,22 @@
+{
+  "name": "task_5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify:css": "cleancss -o style.min.css style.css",
+    "minify:js": "uglifyjs script.js -o script.min.js",
+    "build": "npm run minify:css && npm run minify:js",
+    "start": "live-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "live-server": "^1.2.0",
+    "uglify-js": "^3.19.3"
+  }
+}
